@@ -20,13 +20,14 @@ public class User extends Base{
     private String password;
     
     //Variable Bidireccional Relacion Person (1) a (1) User:
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "id_person")
     @JsonIgnoreProperties(value = "user", allowSetters = true)
     private Person person;
     
     //Variable Bidireccional Relacion User (1) a (1) Role:
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
     private Role role;
 
     public User() {
@@ -67,11 +68,19 @@ public class User extends Base{
     public void setPerson(Person person) {
         this.person = person;
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
     
-   
+    
     @Override
     public String toString() {
-        return "id: " + id + "user: " + user + ", password: " + password +
+        return "id: " + id + "\nuser: " + user + "\npassword: " + password +
                "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
                "\ndate_delete: " + date_delete + "\nstate: " + state;
         

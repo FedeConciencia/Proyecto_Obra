@@ -3,9 +3,11 @@ package com.proyecto.obra.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,9 +29,14 @@ public class Person extends Base {
     private String company;
     
     //Variable Bidireccional Relacion Person (1) a (1) User:
-    @OneToOne(mappedBy = "person")
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "person", allowSetters = true)
     private User user;
+    
+    //Variable Bidireccional Relacion Person (1) a (N) Visit:
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "person", allowSetters = true)
+    private List<Person> listVisit;
 
     public Person() {
     }
@@ -110,10 +117,18 @@ public class Person extends Base {
         this.user = user;
     }
 
+    public List<Person> getListVisit() {
+        return listVisit;
+    }
+
+    public void setListVisit(List<Person> listVisit) {
+        this.listVisit = listVisit;
+    }
+    
     
     @Override
     public String toString() {
-        return "id: " + id + "first_name: " + first_name + "\nlast_name: " + last_name + "\ndni: " + dni + 
+        return "id: " + id + "\nfirst_name: " + first_name + "\nlast_name: " + last_name + "\ndni: " + dni + 
                "\nrecord: " + record + "\nposition: " + position + "\ncompany: " + company + 
                "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
                "\ndate_delete: " + date_delete + "\nstate: " + state;

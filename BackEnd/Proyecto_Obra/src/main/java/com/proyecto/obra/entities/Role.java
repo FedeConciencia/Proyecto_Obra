@@ -3,7 +3,6 @@ package com.proyecto.obra.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -19,9 +18,9 @@ public class Role extends Base{
     private String description;
     
     //Variable Bidireccional Relacion User (1) a (1) Role:
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "id_user")
-    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    @JsonIgnoreProperties(value = "role", allowSetters = true)
     private User user;
 
     public Role() {
@@ -45,10 +44,18 @@ public class Role extends Base{
         this.description = description;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
     
+   
     @Override
     public String toString() {
-        return "id: " + id + "first_name: " + "\ndescription: " + description + 
+        return "id: " + id + "\nfirst_name: " + "\ndescription: " + description + 
                "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
                "\ndate_delete: " + date_delete + "\nstate: " + state;
     }
