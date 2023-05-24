@@ -36,10 +36,7 @@ public class Visit extends Base {
     @JsonIgnoreProperties(value = "listVisit", allowSetters = true)
     private Person person;
     
-    //Variable Bidireccional Relacion Material (1) a (1) Visit:
-    @OneToOne(mappedBy = "visit", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "visit", allowSetters = true)
-    private Material materila;
+    
 
     public Visit() {
     }
@@ -89,15 +86,7 @@ public class Visit extends Base {
         this.person = person;
     }
 
-    public Material getMaterila() {
-        return materila;
-    }
-
-    public void setMaterila(Material materila) {
-        this.materila = materila;
-    }
-    
-
+   
    
     @Override
     public String toString() {

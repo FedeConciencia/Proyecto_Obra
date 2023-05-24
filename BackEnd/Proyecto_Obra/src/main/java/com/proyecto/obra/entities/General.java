@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +37,21 @@ public class General extends Base {
     @OneToMany(mappedBy = "general", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "general", allowSetters = true)
     private List<Visit> listVisit;
+    
+    //Variable Bidireccional Relacion Material (1) a (1) General:
+    @OneToOne(mappedBy = "general", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "general", allowSetters = true)
+    private Material material;
+    
+    //Variable Bidireccional Relacion General (1) a (1) Structure:
+    @OneToOne(mappedBy = "general", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "general", allowSetters = true)
+    private Structure structure;
+    
+    //Variable Bidireccional Relacion General (1) a (1) Mounting:
+    @OneToOne(mappedBy = "general", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "general", allowSetters = true)
+    private Mounting mounting;
 
     public General() {
     }
@@ -135,8 +151,34 @@ public class General extends Base {
     public void setListVisit(List<Visit> listVisit) {
         this.listVisit = listVisit;
     }
+
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
+    }
+
+    public Structure getStructure() {
+        return structure;
+    }
+
+    public void setStructure(Structure structure) {
+        this.structure = structure;
+    }
+
+    public Mounting getMounting() {
+        return mounting;
+    }
+
+    public void setMounting(Mounting mounting) {
+        this.mounting = mounting;
+    }
     
-   
+    
+    
+    
     @Override
     public String toString() {
         return "id: " + id + "\ncodigo: " + codigo + "\nnombre: " + nombre + "\ndniCuit: " + dniCuit + "\ndomicilio: " + domicilio + 

@@ -35,11 +35,11 @@ public class Material extends Base {
     @Column(name = "comment")
     private String comment;
     
-    //Variable Bidireccional Relacion Material (1) a (1) Visit:
+    //Variable Bidireccional Relacion Material (1) a (1) General:
     @OneToOne
-    @JoinColumn(name = "id_visit")
+    @JoinColumn(name = "id_general")
     @JsonIgnoreProperties(value = "material", allowSetters = true)
-    private Visit visit;
+    private General general;
 
     public Material() {
     }
@@ -142,16 +142,16 @@ public class Material extends Base {
         this.comment = comment;
     }
 
-    public Visit getVisit() {
-        return visit;
+    public General getGeneral() {
+        return general;
     }
 
-    public void setVisit(Visit visit) {
-        this.visit = visit;
+    public void setGeneral(General general) {
+        this.general = general;
     }
-    
-    
 
+        
+  
     @Override
     public String toString() {
         return "id: " + id + "\nstorage_state: " + storage_state + "\nstorage_time: " + storage_time + "\nmaterial_transfer: " + material_transfer + 
