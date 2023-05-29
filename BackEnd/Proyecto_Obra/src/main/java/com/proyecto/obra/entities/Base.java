@@ -46,46 +46,7 @@ public class Base implements Serializable {
         this.state = state;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDate getDate_create() {
-        return date_create;
-    }
-
-    public void setDate_create(LocalDate date_create) {
-        this.date_create = date_create;
-    }
-
-    public LocalDate getDate_update() {
-        return date_update;
-    }
-
-    public void setDate_update(LocalDate date_update) {
-        this.date_update = date_update;
-    }
-
-    public LocalDate getDate_delete() {
-        return date_delete;
-    }
-
-    public void setDate_delete(LocalDate date_delete) {
-        this.date_delete = date_delete;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
+   
     @Override
     public String toString() {
         return "id: " + id + "\ndate_create: " + date_create + "\ndate_update: " + date_update + 

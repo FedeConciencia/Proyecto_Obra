@@ -3,7 +3,6 @@ package com.proyecto.obra.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
-import java.util.logging.Logger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,7 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "structure")
+@Table(name = "structures")
 public class Structure extends Base {
     
     @Column(name = "structure")

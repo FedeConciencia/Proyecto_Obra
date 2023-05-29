@@ -12,25 +12,25 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "general")
+@Table(name = "generals")
 public class General extends Base {
     
-    @Column(name = "codigo") 
-    private String codigo;
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "code") 
+    private String code;
+    @Column(name = "nanme")
+    private String name;
     @Column(name = "dniCuit")
     private String dniCuit;
-    @Column(name = "domicilio")
-    private String domicilio;
-    @Column(name = "usoDestino")
-    private String usoDestino;
-    @Column(name = "alcance")
-    private String alcance;
-    @Column(name = "duracion")
-    private int duracion;
-    @Column(name = "comentario")
-    private String comentario;
+    @Column(name = "adress")
+    private String adress;
+    @Column(name = "destination_use")
+    private String destination_use;
+    @Column(name = "scope")
+    private String scope;
+    @Column(name = "duration")
+    private int duration;
+    @Column(name = "comment")
+    private String comment;
     
     
     //Variable Bidireccional Relacion General (1) a (N) Visit:
@@ -52,48 +52,63 @@ public class General extends Base {
     @OneToOne(mappedBy = "general", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "general", allowSetters = true)
     private Mounting mounting;
+    
+    //Variable Bidireccional Relacion Conclusion (1) a (1) General:
+    @OneToOne(mappedBy = "general", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "general", allowSetters = true)
+    private Conclusion conclusion;
 
     public General() {
     }
 
-    public General(String codigo, String nombre, String dniCuit, String domicilio, String usoDestino, String alcance, int duracion, String comentario, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public General(String code, String name, String dniCuit, String adress, String destination_use, String scope, int duration, String comment, List<Visit> listVisit, Material material, Structure structure, Mounting mounting, Conclusion conclusion, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
-        this.codigo = codigo;
-        this.nombre = nombre;
+        this.code = code;
+        this.name = name;
         this.dniCuit = dniCuit;
-        this.domicilio = domicilio;
-        this.usoDestino = usoDestino;
-        this.alcance = alcance;
-        this.duracion = duracion;
-        this.comentario = comentario;
+        this.adress = adress;
+        this.destination_use = destination_use;
+        this.scope = scope;
+        this.duration = duration;
+        this.comment = comment;
+        this.listVisit = listVisit;
+        this.material = material;
+        this.structure = structure;
+        this.mounting = mounting;
+        this.conclusion = conclusion;
     }
 
-    public General(String codigo, String nombre, String dniCuit, String domicilio, String usoDestino, String alcance, int duracion, String comentario, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public General(String code, String name, String dniCuit, String adress, String destination_use, String scope, int duration, String comment, List<Visit> listVisit, Material material, Structure structure, Mounting mounting, Conclusion conclusion, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
-        this.codigo = codigo;
-        this.nombre = nombre;
+        this.code = code;
+        this.name = name;
         this.dniCuit = dniCuit;
-        this.domicilio = domicilio;
-        this.usoDestino = usoDestino;
-        this.alcance = alcance;
-        this.duracion = duracion;
-        this.comentario = comentario;
+        this.adress = adress;
+        this.destination_use = destination_use;
+        this.scope = scope;
+        this.duration = duration;
+        this.comment = comment;
+        this.listVisit = listVisit;
+        this.material = material;
+        this.structure = structure;
+        this.mounting = mounting;
+        this.conclusion = conclusion;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDniCuit() {
@@ -104,46 +119,47 @@ public class General extends Base {
         this.dniCuit = dniCuit;
     }
 
-    public String getDomicilio() {
-        return domicilio;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
-    public String getUsoDestino() {
-        return usoDestino;
+    public String getDestination_use() {
+        return destination_use;
     }
 
-    public void setUsoDestino(String usoDestino) {
-        this.usoDestino = usoDestino;
+    public void setDestination_use(String destination_use) {
+        this.destination_use = destination_use;
     }
 
-    public String getAlcance() {
-        return alcance;
+    public String getScope() {
+        return scope;
     }
 
-    public void setAlcance(String alcance) {
-        this.alcance = alcance;
+    public void setScope(String scope) {
+        this.scope = scope;
     }
 
-    public int getDuracion() {
-        return duracion;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getComment() {
+        return comment;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
+   
     public List<Visit> getListVisit() {
         return listVisit;
     }
@@ -175,20 +191,24 @@ public class General extends Base {
     public void setMounting(Mounting mounting) {
         this.mounting = mounting;
     }
-    
-    
+
+    public Conclusion getConclusion() {
+        return conclusion;
+    }
+
+    public void setConclusion(Conclusion conclusion) {
+        this.conclusion = conclusion;
+    }
     
     
     @Override
     public String toString() {
-        return "id: " + id + "\ncodigo: " + codigo + "\nnombre: " + nombre + "\ndniCuit: " + dniCuit + "\ndomicilio: " + domicilio + 
-               "\nusoDestino: " + usoDestino + "\nalcance: " + alcance + "\nduracion: " + duracion + "\ncomentario: " + comentario +
+        return "id: " + id + "\ncode: " + code + "\nname: " + name + "\ndniCuit: " + dniCuit + "\nadress: " + adress + 
+               "\ndestination_use: " + destination_use + "\nscope: " + scope + "\nduration: " + duration + "\ncomment: " + comment +
                "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
                "\ndate_delete: " + date_delete + "\nstate: " + state;
     }
     
     
-    
-  
     
 }

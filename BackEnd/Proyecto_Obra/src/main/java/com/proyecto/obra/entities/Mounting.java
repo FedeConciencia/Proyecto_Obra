@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mounting")
+@Table(name = "mountings")
 public class Mounting extends Base {
     
     @Column(name = "height")

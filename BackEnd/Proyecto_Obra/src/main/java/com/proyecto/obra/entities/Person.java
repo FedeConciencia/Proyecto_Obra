@@ -36,7 +36,7 @@ public class Person extends Base {
     //Variable Bidireccional Relacion Person (1) a (N) Visit:
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "person", allowSetters = true)
-    private List<Person> listVisit;
+    private List<Visit> listVisit;
 
     public Person() {
     }
@@ -117,14 +117,14 @@ public class Person extends Base {
         this.user = user;
     }
 
-    public List<Person> getListVisit() {
+    public List<Visit> getListVisit() {
         return listVisit;
     }
 
-    public void setListVisit(List<Person> listVisit) {
+    public void setListVisit(List<Visit> listVisit) {
         this.listVisit = listVisit;
     }
-    
+
     
     @Override
     public String toString() {

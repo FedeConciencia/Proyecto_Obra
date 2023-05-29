@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "material")
+@Table(name = "materials")
 public class Material extends Base {
     
     @Column(name = "storage_state")
