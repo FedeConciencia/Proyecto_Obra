@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -200,15 +200,6 @@ public class General extends Base {
         this.conclusion = conclusion;
     }
     
-    
-    @Override
-    public String toString() {
-        return "id: " + id + "\ncode: " + code + "\nname: " + name + "\ndniCuit: " + dniCuit + "\nadress: " + adress + 
-               "\ndestination_use: " + destination_use + "\nscope: " + scope + "\nduration: " + duration + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
+
     
 }

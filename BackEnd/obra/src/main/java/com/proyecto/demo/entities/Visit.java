@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -152,12 +152,6 @@ public class Visit extends Base {
     }
     
     
-    @Override
-    public String toString() {
-        return "id: " + id + "\ndate: " + date_visit + "\nnroVisit: " + nroVisit + 
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
+
     
 }

@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -27,7 +27,7 @@ public class Mounting extends Base {
     private int num_cameras;
     @Column(name = "archit_stage")
     private int archit_stage;
-    @Column(name = "archit_stage")
+    @Column(name = "cameras_stage")
     private int cameras_stage;
     @Column(name = "comment")
     private String comment;
@@ -147,17 +147,6 @@ public class Mounting extends Base {
         this.general = general;
     }
     
-    
 
-    @Override
-    public String toString() {
-        return "id: " + id + "\nheight: " + height + "\ndeck: " + deck + "\nwall: " + wall + "\nnum_wall: " + num_wall + 
-               "\nnum_ceilings: " + num_ceilings + "\nnum_cameras: " + num_cameras + "\narchit_stage: " + archit_stage + 
-               "\ncameras_stage: " + cameras_stage + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
     
 }

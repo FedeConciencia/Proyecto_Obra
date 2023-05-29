@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -305,20 +305,6 @@ public class Subject extends Base {
         this.visit = visit;
     }
     
-    
-    @Override
-    public String toString() {
-        return "id: " + id + "\nnum_gang: " + num_gang + "\nnum_person: " + num_person + "\nnum_arg: " + num_arg + "\nname_contract: " + name_contract + "\nlast_capataz: " + last_capataz + 
-               "\ntime_week_init: " + time_week_init + "\ntime_week_end: " + time_week_end + "\ntime_saturday_init: " + time_saturday_init + "\ntime_saturday_end: " + time_saturday_end + 
-               "\ntime_sunday_init: " + time_sunday_init + "\ntime_sunday_end: " + time_sunday_end + "\nnum_guild: " + num_guild + "\nclothes: " + clothes + 
-               "\nnfootwear: " + footwear + "\nepp: " + epp + "\ntools: " + tools + "\nwork_height: " + work_height + "\nbathrooms: " + bathrooms + 
-               "\nplace_eat: " + place_eat + "\nage_young: " + age_young + "\nage_old: " + age_old + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
-    
-  
+ 
     
 }

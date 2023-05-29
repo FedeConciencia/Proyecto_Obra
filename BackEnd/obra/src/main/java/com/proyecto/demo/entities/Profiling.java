@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -162,15 +162,5 @@ public class Profiling extends Base {
         this.visit = visit;
     }
     
-   
-    @Override
-    public String toString() {
-        return "id: " + id + "\ndate_init: " + date_init + "\ndate_end: " + date_end + "\nelement_set: " + element_set + "\nuse_sealant: " + use_sealant + "\nnum_person: " + num_person + 
-               "\nml_profiling: " + ml_profiling + "\nkg_profiling: " + kg_profiling + "\nml_straps: " + ml_straps + "\nresult: " + result + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
-    
-    
+ 
 }

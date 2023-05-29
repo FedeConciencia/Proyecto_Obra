@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -114,16 +114,6 @@ public class Conclusion extends Base {
     }
     
     
-    @Override
-    public String toString() {
-        return "id: " + id + "\nfinished_work: " + finished_work + "\ncurrent_progress: " + current_progress + "\nexpected_progress: " + expected_progress + "\ndate_end: " + date_end + 
-               "\nsatisfaction: " + satisfaction + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
-    
-    
+  
     
 }

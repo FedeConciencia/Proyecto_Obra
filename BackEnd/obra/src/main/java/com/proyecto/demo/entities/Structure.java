@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -123,19 +123,7 @@ public class Structure extends Base {
         this.general = general;
     }
     
-    
-
-    @Override
-    public String toString() {
-        return "id: " + id + "\nstructure: " + structure + "\ndone: " + done + "\nbeams: " + beams + "\ncolumns: " + columns + "\nstraps: " + straps + 
-               "\nbudgeted: " + budgeted + "\ncomment: " + comment + 
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
-   
-    
+ 
     
     
 }

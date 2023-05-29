@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -151,16 +151,6 @@ public class Material extends Base {
     }
 
         
-  
-    @Override
-    public String toString() {
-        return "id: " + id + "\nstorage_state: " + storage_state + "\nstorage_time: " + storage_time + "\nmaterial_transfer: " + material_transfer + 
-               "\nsecure_storage: " + secure_storage + "\nempty_container: " + empty_container + 
-               "\nleftover_material: " + leftover_material + "\ncleaning_status: " + cleaning_status + "\norganic_waste: " + organic_waste + "\ncomment: " + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
+ 
 
 }

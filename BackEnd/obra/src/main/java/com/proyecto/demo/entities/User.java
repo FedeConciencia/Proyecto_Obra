@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User extends Base{
     
-    @Column(name = "user")
-    private String user;
+    @Column(name = "usuario")
+    private String usuario;
     @Column(name = "password")
     private String password;
     
@@ -33,24 +33,24 @@ public class User extends Base{
     public User() {
     }
 
-    public User(String user, String password, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public User(String usuario, String password, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
-        this.user = user;
+        this.usuario = usuario;
         this.password = password;
     }
 
-    public User(String user, String password, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public User(String usuario, String password, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
-        this.user = user;
+        this.usuario = usuario;
         this.password = password;
     }
 
     public String getUser() {
-        return user;
+        return usuario;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUser(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPassword() {
@@ -77,16 +77,7 @@ public class User extends Base{
         this.role = role;
     }
     
-    
-    @Override
-    public String toString() {
-        return "id: " + id + "\nuser: " + user + "\npassword: " + password +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-        
-    }
-    
-    
+   
     
     
 }

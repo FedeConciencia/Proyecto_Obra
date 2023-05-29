@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.time.LocalDate;
@@ -126,14 +126,5 @@ public class Person extends Base {
     }
 
     
-    @Override
-    public String toString() {
-        return "id: " + id + "\nfirst_name: " + first_name + "\nlast_name: " + last_name + "\ndni: " + dni + 
-               "\nrecord: " + record + "\nposition: " + position + "\ncompany: " + company + 
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
-    
-    
+ 
 }

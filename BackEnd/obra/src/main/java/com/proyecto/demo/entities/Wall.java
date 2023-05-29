@@ -1,5 +1,5 @@
 
-package com.proyecto.obra.entities;
+package com.proyecto.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -11,9 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "roofs")
-public class Roof extends Base {
-    
+@Table(name = "walls")
+public class Wall extends Base{
     
     @Column(name = "date_init")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
@@ -21,8 +20,8 @@ public class Roof extends Base {
     @Column(name = "date_end")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate date_end;
-    @Column(name = "num_deck")
-    private int num_deck;
+    @Column(name = "num_wall")
+    private int num_wall;
     @Column(name = "num_person")
     private int num_person;
     @Column(name = "panel_type")
@@ -58,20 +57,20 @@ public class Roof extends Base {
     @Column(name = "comment")
     private String comment;
     
-    //Variable Bidireccional Relacion Visit (1) a (N) Roof:
+    //Variable Bidireccional Relacion Visit (1) a (N) Wall:
     @ManyToOne
     @JoinColumn(name = "id_visit")
-    @JsonIgnoreProperties(value = "listRoof", allowSetters = true)
+    @JsonIgnoreProperties(value = "listWall", allowSetters = true)
     private Visit visit;
 
-    public Roof() {
+    public Wall() {
     }
 
-    public Roof(LocalDate date_init, LocalDate date_end, int num_deck, int num_person, String panel_type, int fallen_days, String reason, String use_sealant, int stairs, int scaffolding, int stork, int winch, int scissors, int handy, int mobile_crane, int tower_crane, String other_guilds, String delay, int quality_work, String comment, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Wall(LocalDate date_init, LocalDate date_end, int num_wall, int num_person, String panel_type, int fallen_days, String reason, String use_sealant, int stairs, int scaffolding, int stork, int winch, int scissors, int handy, int mobile_crane, int tower_crane, String other_guilds, String delay, int quality_work, String comment, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
         this.date_init = date_init;
         this.date_end = date_end;
-        this.num_deck = num_deck;
+        this.num_wall = num_wall;
         this.num_person = num_person;
         this.panel_type = panel_type;
         this.fallen_days = fallen_days;
@@ -91,11 +90,11 @@ public class Roof extends Base {
         this.comment = comment;
     }
 
-    public Roof(LocalDate date_init, LocalDate date_end, int num_deck, int num_person, String panel_type, int fallen_days, String reason, String use_sealant, int stairs, int scaffolding, int stork, int winch, int scissors, int handy, int mobile_crane, int tower_crane, String other_guilds, String delay, int quality_work, String comment, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Wall(LocalDate date_init, LocalDate date_end, int num_wall, int num_person, String panel_type, int fallen_days, String reason, String use_sealant, int stairs, int scaffolding, int stork, int winch, int scissors, int handy, int mobile_crane, int tower_crane, String other_guilds, String delay, int quality_work, String comment, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
         this.date_init = date_init;
         this.date_end = date_end;
-        this.num_deck = num_deck;
+        this.num_wall = num_wall;
         this.num_person = num_person;
         this.panel_type = panel_type;
         this.fallen_days = fallen_days;
@@ -131,12 +130,12 @@ public class Roof extends Base {
         this.date_end = date_end;
     }
 
-    public int getNum_deck() {
-        return num_deck;
+    public int getNum_wall() {
+        return num_wall;
     }
 
-    public void setNum_deck(int num_deck) {
-        this.num_deck = num_deck;
+    public void setNum_wall(int num_wall) {
+        this.num_wall = num_wall;
     }
 
     public int getNum_person() {
@@ -283,16 +282,6 @@ public class Roof extends Base {
         this.visit = visit;
     }
     
-    
-    @Override
-    public String toString() {
-        return "id: " + id + "\ndate_init: " + date_init + "\ndate_end: " + date_end + "\nnum_wall: " + num_deck + "\nnum_person: " + num_person + "\npanel_type: " + panel_type + 
-               "\nfallen_days: " + fallen_days + "\nreason: " + reason + "\nuse_sealant: " + use_sealant + "\nstairs: " + stairs + "\nscaffolding: " + scaffolding + 
-               "\nstork: " + stork + "\nwinch: " + winch + "\nscissors: " + scissors + "\nhandy: " + handy + "\nmobile_crane: " + mobile_crane + 
-               "\ntower_crane: " + tower_crane + "\nother_guilds: " + other_guilds + "\ndelay: " + delay + "\nquality_work: " + quality_work + "\ncomment:" + comment +
-               "\ndate_create: " + date_create + "\ndate_update: " + date_update + 
-               "\ndate_delete: " + date_delete + "\nstate: " + state;
-    }
-    
+
     
 }
