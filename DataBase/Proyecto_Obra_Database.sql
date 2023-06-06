@@ -233,7 +233,7 @@ CREATE TABLE `persons` (
   `position` varchar(255) DEFAULT NULL,
   `record` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -242,6 +242,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
+INSERT INTO `persons` VALUES (1,'2023-06-06','1900-01-01','1900-01-01','activo','Bervill','31029020','Federico','Sabatini','Software Developer','369');
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,13 +464,13 @@ CREATE TABLE `users` (
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
   `estado` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `usuario` varchar(255) DEFAULT NULL,
   `id_person` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKt1ck97adua0pbtboqs1uy4s56` (`id_person`),
   CONSTRAINT `FKt1ck97adua0pbtboqs1uy4s56` FOREIGN KEY (`id_person`) REFERENCES `persons` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -478,6 +479,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'2023-06-06','1900-01-01','1900-01-01','activo','fsabatini','password',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -573,4 +575,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-01 11:30:11
+-- Dump completed on 2023-06-06 16:54:34

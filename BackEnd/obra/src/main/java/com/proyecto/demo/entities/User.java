@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class User extends Base{
     
-    @Column(name = "usuario")
-    private String usuario;
+    @Column(name = "name")
+    private String name;
     @Column(name = "password")
     private String password;
     
@@ -33,24 +33,24 @@ public class User extends Base{
     public User() {
     }
 
-    public User(String usuario, String password, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public User(String name, String password, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
-        this.usuario = usuario;
+        this.name = name;
         this.password = password;
     }
 
-    public User(String usuario, String password, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public User(String name, String password, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
-        this.usuario = usuario;
+        this.name = name;
         this.password = password;
     }
 
-    public String getUser() {
-        return usuario;
+    public String getName() {
+        return name;
     }
 
-    public void setUser(String usuario) {
-        this.usuario = usuario;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
