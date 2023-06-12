@@ -27,7 +27,7 @@ CREATE TABLE `cameras` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `ceiling` int DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `date_end` date DEFAULT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE `conclusions` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `current_progress` double DEFAULT NULL,
   `date_end` date DEFAULT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE `conclusions` (
   PRIMARY KEY (`id`),
   KEY `FKikxm4brukfx9ejxapep00by2l` (`id_general`),
   CONSTRAINT `FKikxm4brukfx9ejxapep00by2l` FOREIGN KEY (`id_general`) REFERENCES `generals` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,6 +100,7 @@ CREATE TABLE `conclusions` (
 
 LOCK TABLES `conclusions` WRITE;
 /*!40000 ALTER TABLE `conclusions` DISABLE KEYS */;
+INSERT INTO `conclusions` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','activo','prueba11',93.36,'2023-12-05',91.25,'no',4,1);
 /*!40000 ALTER TABLE `conclusions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,17 +116,19 @@ CREATE TABLE `generals` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `adress` varchar(255) DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `destination_use` varchar(255) DEFAULT NULL,
   `dni_cuit` varchar(255) DEFAULT NULL,
   `duration` int DEFAULT NULL,
-  `nanme` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `scope` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_d5yq78ggn48ogl3rb4se2q4od` (`code`),
+  UNIQUE KEY `UK_tpyawpqrr6fwmfvvbs8179x7y` (`dni_cuit`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,6 +137,7 @@ CREATE TABLE `generals` (
 
 LOCK TABLES `generals` WRITE;
 /*!40000 ALTER TABLE `generals` DISABLE KEYS */;
+INSERT INTO `generals` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','activo','Los angeles 2321','P03131','prueba comment1','nave industrial','26-1025121-21',75,'Mendoza Plaza Shopping','inicia desde 1');
 /*!40000 ALTER TABLE `generals` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +153,7 @@ CREATE TABLE `materials` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `cleaning_status` int DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `empty_container` varchar(255) DEFAULT NULL,
@@ -163,7 +167,7 @@ CREATE TABLE `materials` (
   PRIMARY KEY (`id`),
   KEY `FKlujxhlna5lrjv8gydfbs82xge` (`id_general`),
   CONSTRAINT `FKlujxhlna5lrjv8gydfbs82xge` FOREIGN KEY (`id_general`) REFERENCES `generals` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -172,6 +176,7 @@ CREATE TABLE `materials` (
 
 LOCK TABLES `materials` WRITE;
 /*!40000 ALTER TABLE `materials` DISABLE KEYS */;
+INSERT INTO `materials` VALUES (1,'2023-06-12','1900-06-06','1900-06-06','inactiva',5,'prueba123','no','no',3,'no','no',2,'14:21:45',1);
 /*!40000 ALTER TABLE `materials` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -187,7 +192,7 @@ CREATE TABLE `mountings` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `archit_stage` int DEFAULT NULL,
   `cameras_stage` int DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
@@ -201,7 +206,7 @@ CREATE TABLE `mountings` (
   PRIMARY KEY (`id`),
   KEY `FK5o7mckh4tpgoe8c2kjosp9h0q` (`id_general`),
   CONSTRAINT `FK5o7mckh4tpgoe8c2kjosp9h0q` FOREIGN KEY (`id_general`) REFERENCES `generals` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,6 +215,7 @@ CREATE TABLE `mountings` (
 
 LOCK TABLES `mountings` WRITE;
 /*!40000 ALTER TABLE `mountings` DISABLE KEYS */;
+INSERT INTO `mountings` VALUES (1,'2023-12-12','1900-12-12','1900-12-12','inactivo',95,45,'prueba2',33.32,33.32,1,1,1,33.32,1);
 /*!40000 ALTER TABLE `mountings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,14 +231,16 @@ CREATE TABLE `persons` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   `dni` varchar(255) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `position` varchar(255) DEFAULT NULL,
   `record` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_t0tma5e5ec4leolu2gaqpc9v7` (`dni`),
+  UNIQUE KEY `UK_17ris0c5yhhrj7llq1qid9hbb` (`record`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -258,7 +266,7 @@ CREATE TABLE `profilings` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `date_end` date DEFAULT NULL,
   `date_init` date DEFAULT NULL,
@@ -297,13 +305,13 @@ CREATE TABLE `roles` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
   `id_user` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK40d4m5dluy4a79sk18r064avh` (`id_user`),
   CONSTRAINT `FK40d4m5dluy4a79sk18r064avh` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -312,6 +320,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','activo','administrador',1);
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -327,7 +336,7 @@ CREATE TABLE `roofs` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `date_end` date DEFAULT NULL,
   `date_init` date DEFAULT NULL,
@@ -376,7 +385,7 @@ CREATE TABLE `structures` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `beams` int DEFAULT NULL,
   `budgeted` varchar(255) DEFAULT NULL,
   `columns` int DEFAULT NULL,
@@ -388,7 +397,7 @@ CREATE TABLE `structures` (
   PRIMARY KEY (`id`),
   KEY `FKkwqhehemeepbj00u9piqj3r3e` (`id_general`),
   CONSTRAINT `FKkwqhehemeepbj00u9piqj3r3e` FOREIGN KEY (`id_general`) REFERENCES `generals` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -397,6 +406,7 @@ CREATE TABLE `structures` (
 
 LOCK TABLES `structures` WRITE;
 /*!40000 ALTER TABLE `structures` DISABLE KEYS */;
+INSERT INTO `structures` VALUES (1,'2023-12-06','1900-12-06','1900-12-06','inactivo',4,'kgs',4,'prueba1s','nuevo',4,'nuevo',1);
 /*!40000 ALTER TABLE `structures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -412,7 +422,7 @@ CREATE TABLE `subjects` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `age_old` int DEFAULT NULL,
   `age_young` int DEFAULT NULL,
   `bathrooms` varchar(255) DEFAULT NULL,
@@ -463,7 +473,7 @@ CREATE TABLE `users` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `id_person` bigint DEFAULT NULL,
@@ -495,9 +505,9 @@ CREATE TABLE `visits` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `date_visit` date DEFAULT NULL,
-  `nro_visita` int DEFAULT NULL,
+  `nro_visit` int DEFAULT NULL,
   `id_general` bigint DEFAULT NULL,
   `id_person` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -505,7 +515,7 @@ CREATE TABLE `visits` (
   KEY `FK1qom2txbht2wjl02a1jlg6q71` (`id_person`),
   CONSTRAINT `FK1qom2txbht2wjl02a1jlg6q71` FOREIGN KEY (`id_person`) REFERENCES `persons` (`id`),
   CONSTRAINT `FKmny3wl94xbhn0bda48bdo108q` FOREIGN KEY (`id_general`) REFERENCES `generals` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,6 +524,7 @@ CREATE TABLE `visits` (
 
 LOCK TABLES `visits` WRITE;
 /*!40000 ALTER TABLE `visits` DISABLE KEYS */;
+INSERT INTO `visits` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','activo','2023-07-07',1,1,1);
 /*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -529,7 +540,7 @@ CREATE TABLE `walls` (
   `date_create` date DEFAULT NULL,
   `date_delete` date DEFAULT NULL,
   `date_update` date DEFAULT NULL,
-  `estado` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `date_end` date DEFAULT NULL,
   `date_init` date DEFAULT NULL,
@@ -575,4 +586,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-06 16:54:34
+-- Dump completed on 2023-06-12 16:33:04

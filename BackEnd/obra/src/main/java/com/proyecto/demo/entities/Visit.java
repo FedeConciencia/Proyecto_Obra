@@ -22,8 +22,8 @@ public class Visit extends Base {
     @Column(name = "date_visit")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate date_visit;
-    @Column(name = "nroVisita")
-    private int nroVisit;
+    @Column(name = "nro_visit")
+    private int nro_visit;
     
     
     //Variable Bidireccional Relacion General (1) a (N) Visit:
@@ -67,16 +67,16 @@ public class Visit extends Base {
     }
     
     
-    public Visit(LocalDate date_visit, int nroVisit, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Visit(LocalDate date_visit, int nro_visit, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
         this.date_visit = date_visit;
-        this.nroVisit = nroVisit;
+        this.nro_visit = nro_visit;
     }
 
-    public Visit(LocalDate date_visit, int nroVisit, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Visit(LocalDate date_visit, int nro_visit, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
         this.date_visit = date_visit;
-        this.nroVisit = nroVisit;
+        this.nro_visit = nro_visit;
     }
 
     public LocalDate getDate_visit() {
@@ -87,13 +87,15 @@ public class Visit extends Base {
         this.date_visit = date_visit;
     }
 
-    public int getNroVisit() {
-        return nroVisit;
+    public int getNro_visit() {
+        return nro_visit;
     }
 
-    public void setNroVisit(int nroVisit) {
-        this.nroVisit = nroVisit;
+    public void setNro_visit(int nro_visit) {
+        this.nro_visit = nro_visit;
     }
+
+    
 
     public General getGeneral() {
         return general;

@@ -17,7 +17,7 @@ public class Mounting extends Base {
     private double height;
     @Column(name = "deck")
     private double deck;
-    @Column(name = "wall")
+    @Column(name = "")
     private double wall;
     @Column(name = "num_wall")
     private int num_wall;

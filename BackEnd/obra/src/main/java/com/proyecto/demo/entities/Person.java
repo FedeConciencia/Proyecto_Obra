@@ -19,9 +19,9 @@ public class Person extends Base {
     private String first_name;
     @Column(name = "last_name")
     private String last_name;
-    @Column(name = "dni")
+    @Column(name = "dni", unique = true)
     private String dni;
-    @Column(name = "record")
+    @Column(name = "record", unique = true)
     private String record;
     @Column(name = "position")
     private String position;

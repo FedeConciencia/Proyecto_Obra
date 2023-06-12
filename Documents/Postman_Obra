@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \"first_name\":\"Federico\",\r\n    \"last_name\":\"Sabatini\",\r\n    \"dni\":\"31029020\",\r\n    \"company\":\"Bervill\",\r\n    \"position\":\"Software Developer\",\r\n    \"record\":\"369\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"estado\":\"activo\"\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n    \"first_name\":\"Federico\",\r\n    \"last_name\":\"Sabatini\",\r\n    \"dni\":\"31029020\",\r\n    \"company\":\"Bervill\",\r\n    \"position\":\"Software Developer\",\r\n    \"record\":\"369\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\"\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,10 +81,19 @@
 					"response": []
 				},
 				{
-					"name": "Delete_Person",
+					"name": "Update_Person",
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"first_name\":\"Juan\",\r\n    \"last_name\":\"Gimenez\",\r\n    \"dni\":\"31022022\",\r\n    \"company\":\"Friolatina\",\r\n    \"position\":\"Administracion\",\r\n    \"record\":\"555\",\r\n    \"date_create\":\"2023-06-05\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-05-05\",\r\n    \"state\":\"desactivado\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8080/api/v1/person/1",
 							"host": [
@@ -102,19 +111,10 @@
 					"response": []
 				},
 				{
-					"name": "Update_Person",
+					"name": "Delete_Person",
 					"request": {
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"first_name\":\"Juan\",\r\n    \"last_name\":\"Gimenez\",\r\n    \"dni\":\"31022022\",\r\n    \"company\":\"Friolatina\",\r\n    \"position\":\"Administracion\",\r\n    \"record\":\"555\",\r\n    \"date_create\":\"2023-06-05\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-05-05\",\r\n    \"estado\":\"desactivado\"\r\n\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "localhost:8080/api/v1/person/1",
 							"host": [
@@ -143,7 +143,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n\r\n    \"name\":\"fsabatini\",\r\n    \"password\": \"password\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"estado\":\"activo\",\r\n    \"person\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n\r\n    \"name\":\"fsabatini\",\r\n    \"password\": \"password\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"person\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -167,6 +167,78 @@
 					"response": []
 				},
 				{
+					"name": "GetOne_User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"name\":\"dsosa\",\r\n    \"password\": \"password1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-07-07\",\r\n    \"date_update\":\"1900-07-07\",\r\n    \"state\":\"inactivo\",\r\n    \"person\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete_User",
 					"request": {
 						"method": "DELETE",
@@ -181,6 +253,889 @@
 								"api",
 								"v1",
 								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create_Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"description\":\"administrador\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"user\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/role/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/role/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/role/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"description\":\"admin\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-06-06\",\r\n    \"date_update\":\"1900-06-06\",\r\n    \"state\":\"inactivo\",\r\n    \"user\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/role/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Create_General",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"code\":\"P03131\",\r\n    \"name\":\"Mendoza Plaza Shopping\",\r\n    \"dni_cuit\":\"26-1025121-21\",\r\n    \"adress\":\"Los angeles 2321\",\r\n    \"destination_use\":\"nave industrial\",\r\n    \"scope\":\"inicia desde 1\",\r\n    \"duration\":\"75\",\r\n    \"comment\":\"prueba comment1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/general/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_General",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/general/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_General",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/general/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_General",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"code\":\"P0300\",\r\n    \"name\":\"Carrefour SA\",\r\n    \"dni_cuit\":\"27-1025121-21\",\r\n    \"adress\":\"Los angeles 111\",\r\n    \"destination_use\":\"nave\",\r\n    \"scope\":\"inicia desde 0\",\r\n    \"duration\":\"66\",\r\n    \"comment\":\"prueba comment\",\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-06-06\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/general/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_General",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/general/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Visit",
+			"item": [
+				{
+					"name": "Create_Visit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_visit\":\"2023-07-07\",\r\n    \"nro_visit\":1,\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    },\r\n    \"person\":{\r\n        \"id\":1\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Visit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Visit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Visit",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"date_visit\":\"2023-06-06\",\r\n    \"nro_visit\":1,\r\n    \"date_create\":\"2023-06-06\",\r\n    \"date_delete\":\"1900-06-06\",\r\n    \"date_update\":\"1900-06-06\",\r\n    \"state\":\"inactivo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    },\r\n    \"person\":{\r\n        \"id\":1\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Visit",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Material",
+			"item": [
+				{
+					"name": "Create_Material",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"storage_state\":1,\r\n    \"storage_time\":\"13:20:45\",\r\n    \"material_transfer\":2,\r\n    \"secure_storage\":\"si\",\r\n    \"empty_container\":\"no\",\r\n    \"leftover_material\":\"si\",\r\n    \"cleaning_status\":3,\r\n    \"organic_waste\":\"si\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"comment\":\"prueba1\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/material/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"material",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/material/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"material",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Material",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/material/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"material",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Material",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"storage_state\":2,\r\n    \"storage_time\":\"14:21:45\",\r\n    \"material_transfer\":3,\r\n    \"secure_storage\":\"no\",\r\n    \"empty_container\":\"no\",\r\n    \"leftover_material\":\"no\",\r\n    \"cleaning_status\":5,\r\n    \"organic_waste\":\"no\",\r\n    \"date_create\":\"2023-06-12\",\r\n    \"date_delete\":\"1900-06-06\",\r\n    \"date_update\":\"1900-06-06\",\r\n    \"state\":\"inactiva\",\r\n    \"comment\":\"prueba123\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/material/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"material",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/delete/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Structure",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"structure\":\"existente\",\r\n    \"done\":\"ltn\",\r\n    \"beams\":3,\r\n    \"columns\":5,\r\n    \"straps\":2,\r\n    \"budgeted\":\"kg\",\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Structure",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Structure",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Structure",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"structure\":\"nuevo\",\r\n    \"done\":\"nuevo\",\r\n    \"beams\":4,\r\n    \"columns\":4,\r\n    \"straps\":4,\r\n    \"budgeted\":\"kgs\",\r\n    \"comment\":\"prueba1s\",\r\n    \"date_create\":\"2023-12-06\",\r\n    \"date_delete\":\"1900-12-06\",\r\n    \"date_update\":\"1900-12-06\",\r\n    \"state\":\"inactivo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Structure",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mounting",
+			"item": [
+				{
+					"name": "Create_Mounting",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"height\":34.32,\r\n    \"deck\":323,\r\n    \"wall\":234,\r\n    \"num_wall\":3,\r\n    \"num_ceilings\":3,\r\n    \"num_cameras\":3,\r\n    \"archit_stage\":45,\r\n    \"cameras_stage\":43,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Mounting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Mounting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"height\":33.32,\r\n    \"deck\":33.32,\r\n    \"wall\":33.32,\r\n    \"num_wall\":1,\r\n    \"num_ceilings\":1,\r\n    \"num_cameras\":1,\r\n    \"archit_stage\":95,\r\n    \"cameras_stage\":45,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-12-12\",\r\n    \"date_delete\":\"1900-12-12\",\r\n    \"date_update\":\"1900-12-12\",\r\n    \"state\":\"inactivo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Mounting",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conclusion",
+			"item": [
+				{
+					"name": "Create_Conclusion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"finished_work\":\"si\",\r\n    \"current_progress\":98.36,\r\n    \"expected_progress\":95.25,\r\n    \"date_end\":\"2023-08-03\",\r\n    \"satisfaction\":5,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Conclusion",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Conclusion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Conclusion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Conclusion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"finished_work\":\"no\",\r\n    \"current_progress\":93.36,\r\n    \"expected_progress\":91.25,\r\n    \"date_end\":\"2023-12-05\",\r\n    \"satisfaction\":4,\r\n    \"comment\":\"prueba11\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
 								"1"
 							]
 						}

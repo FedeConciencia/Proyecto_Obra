@@ -15,12 +15,12 @@ import javax.persistence.Table;
 @Table(name = "generals")
 public class General extends Base {
     
-    @Column(name = "code") 
+    @Column(name = "code", unique = true) 
     private String code;
-    @Column(name = "nanme")
+    @Column(name = "name")
     private String name;
-    @Column(name = "dniCuit")
-    private String dniCuit;
+    @Column(name = "dni_cuit", unique = true)
+    private String dni_cuit;
     @Column(name = "adress")
     private String adress;
     @Column(name = "destination_use")
@@ -61,39 +61,31 @@ public class General extends Base {
     public General() {
     }
 
-    public General(String code, String name, String dniCuit, String adress, String destination_use, String scope, int duration, String comment, List<Visit> listVisit, Material material, Structure structure, Mounting mounting, Conclusion conclusion, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public General(String code, String name, String dni_cuit, String adress, String destination_use, String scope, int duration, String comment, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
         this.code = code;
         this.name = name;
-        this.dniCuit = dniCuit;
+        this.dni_cuit = dni_cuit;
         this.adress = adress;
         this.destination_use = destination_use;
         this.scope = scope;
         this.duration = duration;
         this.comment = comment;
-        this.listVisit = listVisit;
-        this.material = material;
-        this.structure = structure;
-        this.mounting = mounting;
-        this.conclusion = conclusion;
     }
 
-    public General(String code, String name, String dniCuit, String adress, String destination_use, String scope, int duration, String comment, List<Visit> listVisit, Material material, Structure structure, Mounting mounting, Conclusion conclusion, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public General(String code, String name, String dni_cuit, String adress, String destination_use, String scope, int duration, String comment, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
         this.code = code;
         this.name = name;
-        this.dniCuit = dniCuit;
+        this.dni_cuit = dni_cuit;
         this.adress = adress;
         this.destination_use = destination_use;
         this.scope = scope;
         this.duration = duration;
         this.comment = comment;
-        this.listVisit = listVisit;
-        this.material = material;
-        this.structure = structure;
-        this.mounting = mounting;
-        this.conclusion = conclusion;
     }
+
+    
 
     public String getCode() {
         return code;
@@ -111,14 +103,15 @@ public class General extends Base {
         this.name = name;
     }
 
-    public String getDniCuit() {
-        return dniCuit;
+    public String getDni_cuit() {
+        return dni_cuit;
     }
 
-    public void setDniCuit(String dniCuit) {
-        this.dniCuit = dniCuit;
+    public void setDni_cuit(String dni_cuit) {
+        this.dni_cuit = dni_cuit;
     }
 
+    
     public String getAdress() {
         return adress;
     }

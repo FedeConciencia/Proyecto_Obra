@@ -25,25 +25,25 @@ public class Base implements Serializable {
     @Column(name = "date_delete")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate date_delete;
-    @Column(name = "estado")
-    private String estado;
+    @Column(name = "state")
+    private String state;
 
     public Base() {
     }
 
-    public Base(Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String estado) {
+    public Base(Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         this.id = id;
         this.date_create = date_create;
         this.date_update = date_update;
         this.date_delete = date_delete;
-        this.estado = estado;
+        this.state = state;
     }
 
-    public Base(LocalDate date_create, LocalDate date_update, LocalDate date_delete, String estado) {
+    public Base(LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         this.date_create = date_create;
         this.date_update = date_update;
         this.date_delete = date_delete;
-        this.estado = estado;
+        this.state = state;
     }
 
     public Long getId() {
@@ -78,12 +78,12 @@ public class Base implements Serializable {
         this.date_delete = date_delete;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getState() {
+        return state;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setState(String state) {
+        this.state = state;
     }
     
     
