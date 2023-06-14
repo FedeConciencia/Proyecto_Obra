@@ -23,7 +23,7 @@ public class Subject extends Base {
     @Column(name = "name_contract")
     private String name_contract;
     @Column(name = "name_capataz")
-    private String last_capataz;
+    private String name_capataz;
     @Column(name = "time_week_init")
     private int time_week_init;
     @Column(name = "time_week_end")
@@ -69,13 +69,13 @@ public class Subject extends Base {
     public Subject() {
     }
 
-    public Subject(int num_gang, int num_person, int num_arg, String name_contract, String last_capataz, int time_week_init, int time_week_end, int time_saturday_init, int time_saturday_end, int time_sunday_init, int time_sunday_end, int num_guild, int clothes, String footwear, String epp, String tools, String work_height, String bathrooms, String place_eat, int age_young, int age_old, String comment, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Subject(int num_gang, int num_person, int num_arg, String name_contract, String name_capataz, int time_week_init, int time_week_end, int time_saturday_init, int time_saturday_end, int time_sunday_init, int time_sunday_end, int num_guild, int clothes, String footwear, String epp, String tools, String work_height, String bathrooms, String place_eat, int age_young, int age_old, String comment, Long id, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(id, date_create, date_update, date_delete, state);
         this.num_gang = num_gang;
         this.num_person = num_person;
         this.num_arg = num_arg;
         this.name_contract = name_contract;
-        this.last_capataz = last_capataz;
+        this.name_capataz = name_capataz;
         this.time_week_init = time_week_init;
         this.time_week_end = time_week_end;
         this.time_saturday_init = time_saturday_init;
@@ -95,13 +95,13 @@ public class Subject extends Base {
         this.comment = comment;
     }
 
-    public Subject(int num_gang, int num_person, int num_arg, String name_contract, String last_capataz, int time_week_init, int time_week_end, int time_saturday_init, int time_saturday_end, int time_sunday_init, int time_sunday_end, int num_guild, int clothes, String footwear, String epp, String tools, String work_height, String bathrooms, String place_eat, int age_young, int age_old, String comment, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
+    public Subject(int num_gang, int num_person, int num_arg, String name_contract, String name_capataz, int time_week_init, int time_week_end, int time_saturday_init, int time_saturday_end, int time_sunday_init, int time_sunday_end, int num_guild, int clothes, String footwear, String epp, String tools, String work_height, String bathrooms, String place_eat, int age_young, int age_old, String comment, LocalDate date_create, LocalDate date_update, LocalDate date_delete, String state) {
         super(date_create, date_update, date_delete, state);
         this.num_gang = num_gang;
         this.num_person = num_person;
         this.num_arg = num_arg;
         this.name_contract = name_contract;
-        this.last_capataz = last_capataz;
+        this.name_capataz = name_capataz;
         this.time_week_init = time_week_init;
         this.time_week_end = time_week_end;
         this.time_saturday_init = time_saturday_init;
@@ -153,14 +153,15 @@ public class Subject extends Base {
         this.name_contract = name_contract;
     }
 
-    public String getLast_capataz() {
-        return last_capataz;
+    public String getName_capataz() {
+        return name_capataz;
     }
 
-    public void setLast_capataz(String last_capataz) {
-        this.last_capataz = last_capataz;
+    public void setName_capataz(String name_capataz) {
+        this.name_capataz = name_capataz;
     }
 
+    
     public int getTime_week_init() {
         return time_week_init;
     }

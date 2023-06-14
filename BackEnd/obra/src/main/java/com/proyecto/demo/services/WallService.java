@@ -92,6 +92,8 @@ public class WallService implements BaseService<Wall> {
         
     }
     
+    
+    
     @Override
     @Transactional
     public boolean deleteResource(Long id) throws Exception{

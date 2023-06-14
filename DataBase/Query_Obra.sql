@@ -14,9 +14,11 @@ Select * from persons;
 
 Select * from persons where id = 1;
 
-Delete from persons where id = 1;
+Delete from persons where id = 2;
 
-Update persons set estado = "activo" where id = 1;
+Update persons set first_name = "Federico", last_name = "Sabatini", dni = "31029020", company = "Friolatina", position = "adm", record = "8652", state = "activo", date_create = "2023-06-01", date_update = "2023-06-06", date_delete = "1900-01-01" where id = 1;
+
+Update persons set state = "inactivo", date_delete = curdate() where id = 1;
 
 Delete from persons;
 
@@ -160,3 +162,90 @@ Delete from conclusions;
 alter table conclusions auto_increment = 1;
 
 #---------------------------------------
+
+#Entidad Profilings =>
+
+
+Select * from profilings;
+
+Select * from profilings where id = 1;
+
+Delete from profilings where id = 1;
+
+Update profilings set estado = "inactivo" where id = 1;
+
+Delete from profilings;
+
+alter table profilings auto_increment = 1;
+
+#---------------------------------------
+
+#Entidad Subjects =>
+
+
+Select * from subjects;
+
+Select * from subjects where id = 1;
+
+Delete from subjects where id = 1;
+
+Update subjects set estado = "inactivo" where id = 1;
+
+Delete from subjects;
+
+alter table subjects auto_increment = 1;
+
+#---------------------------------------
+
+
+#Entidad Walls =>
+
+
+Select * from walls;
+
+Select * from walls where id = 1;
+
+Delete from walls where id = 1;
+
+Update walls set estado = "inactivo" where id = 1;
+
+Delete from walls;
+
+alter table walls auto_increment = 1;
+
+#---------------------------------------
+
+#Entidad Roofs =>
+
+
+Select * from roofs;
+
+Select * from roofs where id = 1;
+
+Delete from roofs where id = 1;
+
+Update roofs set estado = "inactivo" where id = 1;
+
+Delete from roofs;
+
+alter table roofs auto_increment = 1;
+
+#---------------------------------------
+
+#Entidad Cameras =>
+
+
+Select * from cameras;
+
+Select * from cameras where id = 1;
+
+Delete from cameras where id = 1;
+
+Update cameras set estado = "inactivo" where id = 1;
+
+Delete from cameras;
+
+alter table cameras auto_increment = 1;
+
+#---------------------------------------
+
