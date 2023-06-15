@@ -3,11 +3,14 @@ package com.proyecto.demo.services;
 
 import com.proyecto.demo.entities.Person;
 import com.proyecto.demo.repositories.PersonRepository;
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ReflectionUtils;
 
 @Service
 public class PersonService implements BaseService<Person> {
@@ -119,6 +122,43 @@ public class PersonService implements BaseService<Person> {
     
     
    
+   
+   @Transactional
+   public Person deleteLogicResource(Long id, Map<String, Object> fields) throws Exception{
+       
+        try{
+            
+            Optional<Person> entityOptional = personRepository.findById(id);
+            
+            if(entityOptional.isPresent()){
+                
+  
+                fields.forEach((key,value) -> {
+                        
+                    Field field = ReflectionUtils.findField(Person.class, key);
+                    field.setAccessible(true);
+                    ReflectionUtils.setField(field, entityOptional.get(), value);
+                       
+                });
+                
+                
+               return personRepository.save(entityOptional.get());
+               
+               
+            }else{
+                
+                return null;
+                
+            }
+            
+        }catch(Exception e){
+
+            throw new Exception(e.getMessage());
+
+        }
+       
+       
+   }
     
     
     

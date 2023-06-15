@@ -56,7 +56,7 @@ CREATE TABLE `cameras` (
   PRIMARY KEY (`id`),
   KEY `FKh3rihw4m6rnh2f40n2jf6hyq` (`id_visit`),
   CONSTRAINT `FKh3rihw4m6rnh2f40n2jf6hyq` FOREIGN KEY (`id_visit`) REFERENCES `visits` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +65,7 @@ CREATE TABLE `cameras` (
 
 LOCK TABLES `cameras` WRITE;
 /*!40000 ALTER TABLE `cameras` DISABLE KEYS */;
+INSERT INTO `cameras` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','inactivo',21,'prueba2','2023-06-12','2023-06-12','no',15,3,3,4,4,21,'no','cu2512664','cf1232541',5,'viento',3,3,3,3,3,'no','no',3,1);
 /*!40000 ALTER TABLE `cameras` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -241,7 +242,7 @@ CREATE TABLE `persons` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_t0tma5e5ec4leolu2gaqpc9v7` (`dni`),
   UNIQUE KEY `UK_17ris0c5yhhrj7llq1qid9hbb` (`record`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,7 +251,7 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES (1,'2023-06-06','1900-01-01','1900-01-01','activo','Bervill','31029020','Federico','Sabatini','Software Developer','369');
+INSERT INTO `persons` VALUES (1,'2023-06-01','1900-01-01','2023-06-06','activo','Friolatina','31029020','Federico','Sabatini','adm','8652');
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,7 +282,7 @@ CREATE TABLE `profilings` (
   PRIMARY KEY (`id`),
   KEY `FKjg8vxw7eh9vq6lgrdr4x4inj2` (`id_visit`),
   CONSTRAINT `FKjg8vxw7eh9vq6lgrdr4x4inj2` FOREIGN KEY (`id_visit`) REFERENCES `visits` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,6 +291,7 @@ CREATE TABLE `profilings` (
 
 LOCK TABLES `profilings` WRITE;
 /*!40000 ALTER TABLE `profilings` DISABLE KEYS */;
+INSERT INTO `profilings` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','inactivo','prueba2','2023-06-09','2023-06-07','iner',35,35,35,3,1,'no',1);
 /*!40000 ALTER TABLE `profilings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -361,7 +363,7 @@ CREATE TABLE `roofs` (
   PRIMARY KEY (`id`),
   KEY `FK1hc16pq2td7gea9pjp6hicqa6` (`id_visit`),
   CONSTRAINT `FK1hc16pq2td7gea9pjp6hicqa6` FOREIGN KEY (`id_visit`) REFERENCES `visits` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,6 +372,7 @@ CREATE TABLE `roofs` (
 
 LOCK TABLES `roofs` WRITE;
 /*!40000 ALTER TABLE `roofs` DISABLE KEYS */;
+INSERT INTO `roofs` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','inactivo','prueba2','2023-06-12','2023-06-12','no',31,3,3,21,1,'no','CV125412',5,'viento',3,3,3,3,3,'no',3,1);
 /*!40000 ALTER TABLE `roofs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -449,7 +452,7 @@ CREATE TABLE `subjects` (
   PRIMARY KEY (`id`),
   KEY `FKeswt2l5ukq50wbi0o88emc5p3` (`id_visit`),
   CONSTRAINT `FKeswt2l5ukq50wbi0o88emc5p3` FOREIGN KEY (`id_visit`) REFERENCES `visits` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -458,6 +461,7 @@ CREATE TABLE `subjects` (
 
 LOCK TABLES `subjects` WRITE;
 /*!40000 ALTER TABLE `subjects` DISABLE KEYS */;
+INSERT INTO `subjects` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','inactivo',45,21,'si',2,'prueba2','si','no','Gimenez Maurinho','Raul Sandez',2,4,3,3,'si',15,7,12,7,15,7,'si','si',1);
 /*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -565,7 +569,7 @@ CREATE TABLE `walls` (
   PRIMARY KEY (`id`),
   KEY `FK8jix9bqo2kf3hebk08adkaddr` (`id_visit`),
   CONSTRAINT `FK8jix9bqo2kf3hebk08adkaddr` FOREIGN KEY (`id_visit`) REFERENCES `visits` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -574,6 +578,7 @@ CREATE TABLE `walls` (
 
 LOCK TABLES `walls` WRITE;
 /*!40000 ALTER TABLE `walls` DISABLE KEYS */;
+INSERT INTO `walls` VALUES (1,'2023-07-07','1900-01-01','1900-01-01','inactivo','prueba2','2023-06-12','2023-06-12','no',31,3,3,1,21,'no','CV125412',5,'viento',3,3,3,3,3,'no',3,1);
 /*!40000 ALTER TABLE `walls` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -586,4 +591,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-12 16:33:04
+-- Dump completed on 2023-06-15 11:17:16

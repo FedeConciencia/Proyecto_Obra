@@ -130,6 +130,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Person",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \r\n    \"date_delete\":\"2023-06-15\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/person/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"person",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1066,7 +1096,20 @@
 					"name": "GetAll_Conclusion",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -1136,6 +1179,646 @@
 								"api",
 								"v1",
 								"conclusion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profiling",
+			"item": [
+				{
+					"name": "Create_Profiling",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_init\":\"2023-06-13\",\r\n    \"date_end\":\"2023-06-13\",\r\n    \"element_set\":\"escobas\",\r\n    \"use_sealant\":\"si\",\r\n    \"num_person\":4,\r\n    \"ml_profiling\":45,\r\n    \"kg_profiling\":34,\r\n    \"ml_straps\":34,\r\n    \"result\":5,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Profiling",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Profiling",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Profiling",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"date_init\":\"2023-06-07\",\r\n    \"date_end\":\"2023-06-09\",\r\n    \"element_set\":\"iner\",\r\n    \"use_sealant\":\"no\",\r\n    \"num_person\":3,\r\n    \"ml_profiling\":35,\r\n    \"kg_profiling\":35,\r\n    \"ml_straps\":35,\r\n    \"result\":1,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Profiling",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "Create_Subject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"num_gang\":3,\r\n    \"num_person\":2,\r\n    \"num_arg\":3,\r\n    \"name_contract\":\"Emilio Sandez\",\r\n    \"name_capataz\":\"Jose Maurinho\",\r\n    \"time_week_init\":8,\r\n    \"time_week_end\":16,\r\n    \"time_saturday_init\":8,\r\n    \"time_saturday_end\":13,\r\n    \"time_sunday_init\":8,\r\n    \"time_sunday_end\":13,\r\n    \"num_guild\":2,\r\n    \"clothes\":3,\r\n    \"footwear\":\"si\",\r\n    \"epp\":\"no\",\r\n    \"tools\":\"si\",\r\n    \"work_height\":\"si\",\r\n    \"bathrooms\":\"si\",\r\n    \"place_eat\":\"si\",\r\n    \"age_young\":18,\r\n    \"age_old\":61,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Subject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Subject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Subject",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"num_gang\":4,\r\n    \"num_person\":3,\r\n    \"num_arg\":2,\r\n    \"name_contract\":\"Raul Sandez\",\r\n    \"name_capataz\":\"Gimenez Maurinho\",\r\n    \"time_week_init\":7,\r\n    \"time_week_end\":15,\r\n    \"time_saturday_init\":7,\r\n    \"time_saturday_end\":15,\r\n    \"time_sunday_init\":7,\r\n    \"time_sunday_end\":12,\r\n    \"num_guild\":3,\r\n    \"clothes\":2,\r\n    \"footwear\":\"no\",\r\n    \"epp\":\"si\",\r\n    \"tools\":\"si\",\r\n    \"work_height\":\"si\",\r\n    \"bathrooms\":\"si\",\r\n    \"place_eat\":\"si\",\r\n    \"age_young\":21,\r\n    \"age_old\":45,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Subject",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wall",
+			"item": [
+				{
+					"name": "Create_Wall",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\r\n    \"date_init\":\"2023-06-13\",\r\n    \"date_end\":\"2023-06-13\",\r\n    \"num_wall\":25,\r\n    \"num_person\":3,\r\n    \"panel_type\":\"cx1232541\",\r\n    \"fallen_days\":20,\r\n    \"reason\":\"lluvia\",\r\n    \"use_sealant\":\"si\",\r\n    \"stairs\":\"1\",\r\n    \"scaffolding\":\"2\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"4\",\r\n    \"scissors\":\"2\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"1\",\r\n    \"other_guilds\":\"si\",\r\n    \"delay\":\"si\",\r\n    \"quality_work\":3,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Wall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Wall",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Wall",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"date_init\":\"2023-06-12\",\r\n    \"date_end\":\"2023-06-12\",\r\n    \"num_wall\":21,\r\n    \"num_person\":1,\r\n    \"panel_type\":\"CV125412\",\r\n    \"fallen_days\":31,\r\n    \"reason\":\"viento\",\r\n    \"use_sealant\":\"no\",\r\n    \"stairs\":\"3\",\r\n    \"scaffolding\":\"3\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"3\",\r\n    \"scissors\":\"3\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"3\",\r\n    \"other_guilds\":\"no\",\r\n    \"delay\":\"no\",\r\n    \"quality_work\":5,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Wall",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roof",
+			"item": [
+				{
+					"name": "Create_Roof",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\r\n    \"date_init\":\"2023-06-13\",\r\n    \"date_end\":\"2023-06-13\",\r\n    \"num_deck\":25,\r\n    \"num_person\":3,\r\n    \"panel_type\":\"cx1232541\",\r\n    \"fallen_days\":20,\r\n    \"reason\":\"lluvia\",\r\n    \"use_sealant\":\"si\",\r\n    \"stairs\":\"1\",\r\n    \"scaffolding\":\"2\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"4\",\r\n    \"scissors\":\"2\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"1\",\r\n    \"other_guilds\":\"si\",\r\n    \"delay\":\"si\",\r\n    \"quality_work\":3,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Roof",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Roof",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Roof",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"date_init\":\"2023-06-12\",\r\n    \"date_end\":\"2023-06-12\",\r\n    \"num_deck\":21,\r\n    \"num_person\":1,\r\n    \"panel_type\":\"CV125412\",\r\n    \"fallen_days\":31,\r\n    \"reason\":\"viento\",\r\n    \"use_sealant\":\"no\",\r\n    \"stairs\":\"3\",\r\n    \"scaffolding\":\"3\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"3\",\r\n    \"scissors\":\"3\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"3\",\r\n    \"other_guilds\":\"no\",\r\n    \"delay\":\"no\",\r\n    \"quality_work\":5,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Camera",
+			"item": [
+				{
+					"name": "Create_Camera",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\r\n    \"date_init\":\"2023-06-13\",\r\n    \"date_end\":\"2023-06-13\",\r\n    \"num_wall\":25,\r\n    \"num_person_wall\":3,\r\n    \"panel_type_wall\":\"cx1232541\",\r\n    \"ceiling\":23,\r\n    \"num_person_ceil\":3,\r\n    \"panel_type_ceil\":\"cd2512664\",\r\n    \"fallen_days\":20,\r\n    \"reason\":\"lluvia\",\r\n    \"use_putty\":\"si\",\r\n    \"use_sealant\":\"si\",\r\n    \"stairs\":\"1\",\r\n    \"scaffolding\":\"2\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"4\",\r\n    \"scissors\":\"2\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"1\",\r\n    \"other_guilds\":\"si\",\r\n    \"delay\":\"si\",\r\n    \"quality_work\":3,\r\n    \"comment\":\"prueba1\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll_Camera",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne_Camera",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Camera",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Camera",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"date_init\":\"2023-06-12\",\r\n    \"date_end\":\"2023-06-12\",\r\n    \"num_wall\":21,\r\n    \"num_person_wall\":4,\r\n    \"panel_type_wall\":\"cf1232541\",\r\n    \"ceiling\":21,\r\n    \"num_person_ceil\":4,\r\n    \"panel_type_ceil\":\"cu2512664\",\r\n    \"fallen_days\":15,\r\n    \"reason\":\"viento\",\r\n    \"use_putty\":\"no\",\r\n    \"use_sealant\":\"no\",\r\n    \"stairs\":\"3\",\r\n    \"scaffolding\":\"3\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"3\",\r\n    \"scissors\":\"3\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"3\",\r\n    \"other_guilds\":\"no\",\r\n    \"delay\":\"no\",\r\n    \"quality_work\":5,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
 								"1"
 							]
 						}

@@ -3,6 +3,7 @@ package com.proyecto.demo.controllers;
 
 import com.proyecto.demo.entities.Person;
 import com.proyecto.demo.services.PersonService;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -88,6 +89,24 @@ public class PersonController {
         }
         
     }
+    
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> deleteLogic(@PathVariable Long id, @RequestBody Map<String,Object> datas){
+        
+        try{
+            
+            return ResponseEntity.status(HttpStatus.OK).body(personService.deleteLogicResource(id, datas));
+            
+        }catch(Exception e){
+            
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por Favor intente mas tarde.\"}");
+            
+        }
+        
+    }
+    
+    
+    
     
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
