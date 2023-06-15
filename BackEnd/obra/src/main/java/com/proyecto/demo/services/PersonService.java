@@ -4,6 +4,7 @@ package com.proyecto.demo.services;
 import com.proyecto.demo.entities.Person;
 import com.proyecto.demo.repositories.PersonRepository;
 import java.lang.reflect.Field;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -124,7 +125,7 @@ public class PersonService implements BaseService<Person> {
    
    
    @Transactional
-   public Person deleteLogicResource(Long id, Map<String, Object> fields) throws Exception{
+   public Person deleteLogicResource(Long id, Map<String, String> fields) throws Exception{
        
         try{
             
@@ -136,8 +137,19 @@ public class PersonService implements BaseService<Person> {
                 fields.forEach((key,value) -> {
                         
                     Field field = ReflectionUtils.findField(Person.class, key);
+                    
                     field.setAccessible(true);
-                    ReflectionUtils.setField(field, entityOptional.get(), value);
+                    
+                    if (field.getAnnotatedType().getType().equals(LocalDate.class)) {
+                        
+                        ReflectionUtils.setField(field, entityOptional.get(), LocalDate.parse(value));
+                    
+                    } else {
+                        
+                        ReflectionUtils.setField(field, entityOptional.get(), value);
+                        
+                    }
+                    
                        
                 });
                 

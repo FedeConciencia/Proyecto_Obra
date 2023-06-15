@@ -91,16 +91,19 @@ public class PersonController {
     }
     
     @PatchMapping("/{id}")
-    public ResponseEntity<?> deleteLogic(@PathVariable Long id, @RequestBody Map<String,Object> datas){
+    public ResponseEntity<?> deleteLogic(@PathVariable Long id, @RequestBody Map<String,String> fields){
         
         try{
             
-            return ResponseEntity.status(HttpStatus.OK).body(personService.deleteLogicResource(id, datas));
+            return ResponseEntity.status(HttpStatus.OK).body(personService.deleteLogicResource(id, fields));
             
         }catch(Exception e){
             
+            System.out.println(e.getMessage());
+            
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por Favor intente mas tarde.\"}");
             
+
         }
         
     }
