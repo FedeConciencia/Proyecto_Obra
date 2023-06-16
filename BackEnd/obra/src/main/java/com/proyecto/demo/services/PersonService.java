@@ -123,9 +123,9 @@ public class PersonService implements BaseService<Person> {
     
     
    
-   
+   @Override
    @Transactional
-   public Person deleteLogicResource(Long id, Map<String, String> fields) throws Exception{
+   public Person updateFieldResource(Long id, Map<String, String> fields) throws Exception{
        
         try{
             

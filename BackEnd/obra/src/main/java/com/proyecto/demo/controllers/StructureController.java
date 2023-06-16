@@ -3,12 +3,14 @@ package com.proyecto.demo.controllers;
 
 import com.proyecto.demo.entities.Structure;
 import com.proyecto.demo.services.StructureService;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -87,6 +89,25 @@ public class StructureController {
         }
         
     }
+    
+    @PatchMapping("/{id}")
+    public ResponseEntity<?> deleteLogic(@PathVariable Long id, @RequestBody Map<String,String> fields){
+        
+        try{
+            
+            return ResponseEntity.status(HttpStatus.OK).body(structureService.updateFieldResource(id, fields));
+            
+        }catch(Exception e){
+            
+            System.out.println(e.getMessage());
+            
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"error\":\"Error. Por Favor intente mas tarde.\"}");
+            
+
+        }
+        
+    }
+    
     
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){

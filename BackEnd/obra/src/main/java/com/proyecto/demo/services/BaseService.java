@@ -11,7 +11,7 @@ public interface BaseService<E> {
     public E readResource(Long id) throws Exception;
     public E createResource(E entity) throws Exception;
     public E updateResource(Long id, E entity) throws Exception;
-    //public E logicResource(Long id, Map<Object, Object> fields) throws Exception;
+    public E updateFieldResource(Long id, Map<String, String> fields) throws Exception;
     public boolean deleteResource(Long id) throws Exception;
 
     

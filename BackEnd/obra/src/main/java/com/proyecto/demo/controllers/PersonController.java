@@ -95,7 +95,7 @@ public class PersonController {
         
         try{
             
-            return ResponseEntity.status(HttpStatus.OK).body(personService.deleteLogicResource(id, fields));
+            return ResponseEntity.status(HttpStatus.OK).body(personService.updateFieldResource(id, fields));
             
         }catch(Exception e){
             
