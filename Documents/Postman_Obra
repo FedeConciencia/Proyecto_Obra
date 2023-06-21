@@ -138,7 +138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n    \r\n    \"date_delete\":\"2023-06-15\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,6 +288,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -416,6 +446,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Role",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/role/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -529,6 +589,36 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/general/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"general",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Logic_General",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8080/api/v1/general/1",
 							"host": [
@@ -672,6 +762,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Visit",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/visit/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"visit",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -800,6 +920,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Material",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/material/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"material",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -913,6 +1063,36 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/structure/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"structure",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Logic_Structure",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8080/api/v1/structure/1",
 							"host": [
@@ -1056,6 +1236,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Mounting",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/mounting/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"mounting",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1163,6 +1373,36 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"finished_work\":\"no\",\r\n    \"current_progress\":93.36,\r\n    \"expected_progress\":91.25,\r\n    \"date_end\":\"2023-12-05\",\r\n    \"satisfaction\":4,\r\n    \"comment\":\"prueba11\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"activo\",\r\n    \"general\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/conclusion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"conclusion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Logic_Conclusion",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1312,6 +1552,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Profiling",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/profiling/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"profiling",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1425,6 +1695,36 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/subject/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"subject",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Logic_Subject",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8080/api/v1/subject/1",
 							"host": [
@@ -1568,6 +1868,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Wall",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/wall/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"wall",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1696,6 +2026,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete_Logic_Roof",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/roof/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"roof",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1803,6 +2163,36 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n\r\n    \"id\":1,\r\n    \"date_init\":\"2023-06-12\",\r\n    \"date_end\":\"2023-06-12\",\r\n    \"num_wall\":21,\r\n    \"num_person_wall\":4,\r\n    \"panel_type_wall\":\"cf1232541\",\r\n    \"ceiling\":21,\r\n    \"num_person_ceil\":4,\r\n    \"panel_type_ceil\":\"cu2512664\",\r\n    \"fallen_days\":15,\r\n    \"reason\":\"viento\",\r\n    \"use_putty\":\"no\",\r\n    \"use_sealant\":\"no\",\r\n    \"stairs\":\"3\",\r\n    \"scaffolding\":\"3\",\r\n    \"stork\":\"3\",\r\n    \"winch\":\"3\",\r\n    \"scissors\":\"3\",\r\n    \"handy\":\"3\",\r\n    \"mobile_crane\":\"3\",\r\n    \"tower_crane\":\"3\",\r\n    \"other_guilds\":\"no\",\r\n    \"delay\":\"no\",\r\n    \"quality_work\":5,\r\n    \"comment\":\"prueba2\",\r\n    \"date_create\":\"2023-07-07\",\r\n    \"date_delete\":\"1900-01-01\",\r\n    \"date_update\":\"1900-01-01\",\r\n    \"state\":\"inactivo\",\r\n    \"visit\":{\r\n\r\n        \"id\":1\r\n\r\n    }\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/camera/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"camera",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Logic_Camera",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"date_delete\":\"2023-06-21\",\r\n    \"state\":\"inactivo\"\r\n\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
